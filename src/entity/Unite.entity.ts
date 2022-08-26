@@ -1,5 +1,6 @@
 import { Producteur } from './Producteur.entity';
 import { Bloc } from './Bloc.entity';
+import { Employee } from './Employee.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm';
 
 @Entity()
@@ -18,4 +19,7 @@ export class Unite {
 
   @OneToMany(() => Bloc, bloc => bloc.unite)
   bloc: Bloc[];
+
+  @OneToMany(() => Employee, (employee) => employee.unite)
+  employees: Employee[];
 }

@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Utilisateur } from './Utilisateur.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinTable, ManyToMany } from 'typeorm';
+import { Operations } from './Operations.entity';
+import { Producteur } from './Producteur.entity';
 
 @Entity()
 export class User {
@@ -21,6 +22,10 @@ export class User {
   @Column()
   Active: boolean;
 
-  @OneToMany(() => Utilisateur, utilisateur => utilisateur.user)
-  utilisateur: Utilisateur
+  @ManyToMany(() => Producteur)
+  @JoinTable()
+  producters: Producteur[];
+
+  @OneToMany(() => Operations, (operation) => operation.creatPar)
+  operations: Operations[];
 }

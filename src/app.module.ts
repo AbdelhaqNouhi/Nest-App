@@ -11,9 +11,11 @@ import { ProducteurModule } from './api/producteur/producteur.module';
 import { ParcelleModule } from './api/parcelle/parcelle.module';
 import { CampagneModule } from './api/campagne/campagne.module';
 import { BlocModule } from './api/bloc/bloc.module';
+import { EmployeeModule } from './api/employee/employee.module';
+import { OperationsModule } from './api/operations/operations.module';
 
 @Module({
-  imports: [UserModule, TypeOrmModule.forRoot(typeOrmConfig), BlocModule, CampagneModule, ParcelleModule, ProducteurModule, SectionModule, SectionDetailModule, UniteModule, UtilisateurModule, VarieteModule],
+  imports: [UserModule, TypeOrmModule.forRoot(typeOrmConfig), BlocModule, CampagneModule, ParcelleModule, ProducteurModule, SectionModule, SectionDetailModule, UniteModule, UtilisateurModule, VarieteModule, EmployeeModule, OperationsModule],
   controllers: [],
   providers: [],
 })

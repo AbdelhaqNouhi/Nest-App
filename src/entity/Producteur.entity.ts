@@ -1,6 +1,5 @@
 import { Unite } from './Unite.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Utilisateur } from './Utilisateur.entity';
 
 @Entity()
 export class Producteur {
@@ -33,7 +32,4 @@ export class Producteur {
 
   @OneToMany(() => Unite, unite => unite.producteur)
   unite: Unite[];
-
-  @OneToMany(() => Utilisateur, utilisateur => utilisateur.producteur)
-  utilisateur: Utilisateur
 }

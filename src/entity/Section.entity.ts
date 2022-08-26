@@ -1,5 +1,6 @@
 import { Campagne } from './Campagne.entity';
 import { SectionDetail } from './SectionDetail.entity';
+import { Operations } from './Operations.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm';
 
 @Entity()
@@ -18,4 +19,7 @@ export class Section {
     
     @ManyToOne(() => Campagne, campagne => campagne.section)
     campagne: Campagne
+
+    @OneToMany(() => Operations, (operations) => operations.section)
+    operations: Operations[];
 }
